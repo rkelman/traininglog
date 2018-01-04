@@ -41,7 +41,7 @@ echo "  <option value=\"Cycling\">Cycling</option>\n";
 echo "  <option value=\"Run\">Running</option>\n";
 echo "  <option value=\"Swim\">Swim</option>\n";
 echo "  <option value=\"Circuit\">Circuit</option>\n";
-echo "</select>\n";
+echo "</select><BR>\n";
 echo "<input type=\"submit\" value=\"Log Training\">";
 echo "</form>\n";
 echo "</body>\n";
