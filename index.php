@@ -13,7 +13,7 @@ if (isset($_POST["sport"])) {
   }
 
   $ins_sql = "INSERT into training_log
-      SET (trainDate, distance, elapsedTime, type)
+      (trainDate, distance, elapsedTime, type)
       VALUES
       (now(), ".$dist.", ".$time.", '".$sport."')";
 
