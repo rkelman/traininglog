@@ -32,7 +32,7 @@ echo "<form action=\"index.php\" method=\"post\">\n";
 echo "Enter new training activity:<BR>\n";
 echo "Distance (mi/yds): ";
 echo "<input type=\"text\" name=\"distance\"><BR>\n";
-echo "Elapsed Time (min): ";
+echo "Elapsed Time (0:00:00): ";
 echo "<input type=\"text\" name=\"time\"><BR>\n";
 echo "Sport: ";
 echo "<select name=\"sport\">\n";
