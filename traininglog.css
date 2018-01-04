@@ -1,0 +1,15 @@
+body {
+  color: black;
+  font-family: verdana;
+  font-size: 100%;
+}
+pos_mesg {
+   color: green;
+   font-family: verdana;
+   font-size: 133%;
+}
+neg_mesg {
+   color: red;
+   font-family: verdana;
+   font-size: 133%;
+}

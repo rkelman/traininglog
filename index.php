@@ -23,10 +23,11 @@ if (isset($_POST["sport"])) {
 
 }
 echo "<html>\n";
+echo "<head>\n<link rel="stylesheet" href="traininglog.css">\n</head>";
 echo "<body>\n";
-echo $ins_sql;
+//echo $ins_sql;
 if ($ins_trainlog) {
-  echo "Training Inserted Successfully\n";
+  echo "<pos_mesg>Training Inserted Successfully</pos_mesg><BR>\n";
 }
 echo "<form action=\"index.php\" method=\"post\">\n";
 echo "Enter new training activity:<BR>\n";
