@@ -12,7 +12,7 @@ if (isset($_POST["sport"])) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $ins_sql = "INSERT into training log
+  $ins_sql = "INSERT into training_log
       SET (trainDate, distance, elapsedTime, type)
       VALUES
       (now(), ".$distance.", ".$time.", ".$sport.")";
@@ -24,7 +24,7 @@ if (isset($_POST["sport"])) {
 }
 echo "<html>\n";
 echo "<body>\n";
-echo $_POST["sport"]." ".$_POST["distance"];
+
 if ($ins_trainlog) {
   echo "Training Inserted Successfully\n";
 }
