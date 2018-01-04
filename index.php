@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-if ($_POST["sport"]) {
+if (isset($_POST["sport"])) {
   $sport = $_POST["sport"];
   $dist = $_POST["distance"];
   $sport = $_POST["time"];
