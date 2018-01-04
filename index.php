@@ -24,6 +24,7 @@ if (isset($_POST["sport"])) {
 }
 echo "<html>\n";
 echo "<body>\n";
+echo $_POST["sport"]." ".$_POST["distance"];
 if ($ins_trainlog) {
   echo "Training Inserted Successfully\n";
 }
