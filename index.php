@@ -23,7 +23,7 @@ if (isset($_POST["sport"])) {
 
 }
 echo "<html>\n";
-echo "<head>\n<link rel="stylesheet" href="traininglog.css">\n</head>";
+echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n</head>\n";
 echo "<body>\n";
 //echo $ins_sql;
 if ($ins_trainlog) {
