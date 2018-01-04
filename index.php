@@ -2,10 +2,9 @@
 include 'connection.php';
 
 if (isset($_POST["sport"])) {
-  echo "worked";
   $sport = $_POST["sport"];
   $dist = $_POST["distance"];
-  $sport = $_POST["time"];
+  $time = $_POST["time"];
 
   $conn = connectDB();
 
