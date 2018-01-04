@@ -15,7 +15,7 @@ if (isset($_POST["sport"])) {
   $ins_sql = "INSERT into training_log
       (trainDate, distance, elapsedTime, type)
       VALUES
-      (now(), ".$dist.", ".$time.", '".$sport."')";
+      (now(), ".$dist.", '".$time."', '".$sport."')";
 
   $ins_trainlog=$conn->query($ins_sql);
 
