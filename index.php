@@ -28,7 +28,7 @@ if ($ins_trainlog) {
   echo "Training Inserted Successfully\n";
 }
 echo "<form action=\"index.php\" method=\"post\">\n";
-echo "Enter new training activity:<BR>\n"
+echo "Enter new training activity:<BR>\n";
 echo "Distance (mi/yds): ";
 echo "<input type=\"text\" name=\"distance\"><BR>\n";
 echo "Elapsed Time (min): ";
@@ -43,5 +43,5 @@ echo "</select>\n";
 echo "<input type=\"submit\" value=\"Log Training\">";
 echo "</form>\n";
 echo "</body>\n";
-echo "</html>"
+echo "</html>";
 ?>
