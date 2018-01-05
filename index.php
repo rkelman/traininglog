@@ -9,7 +9,7 @@ if (isset($_POST["sport"])) {
   $conn = connectDB();
 
   if ($conn->connect_errno > 0) {
-    die("Connection failed: " . $conn->connect_error);
+    die("<neg_mesg>Connection failed: ".$conn->connect_error."</neg_mesg>");
   }
 
   $ins_sql = "INSERT into training_log
@@ -58,13 +58,14 @@ $total_sql = "SELECT type, sum(distance)
         GROUP BY type";
 
 echo $total_sql;
-
+$result = $conn->query($total_sql);
+/*
 if (!$result = $conn->query($total_sql)) {
   // Oh no! The query failed.
   echo "Sorry, the website is experiencing problems.<BR>";
   echo $total_sql;
 }
-
+*/
 echo "Test";
 
 if ($result->num_rows > 0) {
