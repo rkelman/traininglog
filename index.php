@@ -57,6 +57,8 @@ $total_sql = "SELECT type, sum(distance)
         FROM training_log
         GROUP BY type";
 
+echo "Test";
+
 if (!$result = $conn->query($total_sql)) {
   // Oh no! The query failed.
   echo "Sorry, the website is experiencing problems.<BR>";
