@@ -66,7 +66,7 @@ if (!$result = $conn->query($total_sql)) {
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    if (($row['type']=='Cycling') OR ($row['type']=='Running')) {
+    if (($row['type']=='Cycling') || ($row['type']=='Running')) {
       $dist_unit = 'Miles';
     } else {
       $dist_unit = 'Yds';
