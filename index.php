@@ -56,9 +56,9 @@ echo "Annual Totals:<BR>\n";
 $total_sql = "SELECT type, sum(distance)
         FROM training_log
         GROUP BY type";
-
+/*
 if (!$result = $conn->query($total_sql)) {
-  /* Oh no! The query failed. */
+  /* Oh no! The query failed.
   echo "Sorry, the website is experiencing problems.<BR>";
   echo $total_sql;
 }
@@ -66,20 +66,18 @@ if (!$result = $conn->query($total_sql)) {
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    if ($row['type']=='Cycling') OR ($row['type']=='Cycling') {
+    if ($row['type']=='Cycling') OR ($row['type']=='Running') {
       $dist_unit = 'Miles';
     } else {
       $dist_unit = 'Yds';
     }
     echo $row['type'].": ".$row['sum(distance)']." ".$dist_unit."<BR>\n";
 } else {
-    echo "Sorry - no training logged this year<BR>\n";
+  echo "Sorry - no training logged this year<BR>\n";
 }
-
+*/
+$conn->close();
 
 echo "</body>\n";
 echo "</html>";
-
-$conn->close();
-
 ?>
