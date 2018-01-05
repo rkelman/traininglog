@@ -1,12 +1,12 @@
 <?php
 include 'connection.php';
 
+$conn = connectDB();
+
 if (isset($_POST["sport"])) {
   $sport = $_POST["sport"];
   $dist = $_POST["distance"];
   $time = $_POST["time"];
-
-  $conn = connectDB();
 
   if ($conn->connect_errno > 0) {
     die("<neg_mesg>Connection failed: ".$conn->connect_error."</neg_mesg>");
@@ -58,31 +58,26 @@ $tot_sql = "SELECT type, sum(distance) sum_dist FROM training_log GROUP BY type"
 echo $tot_sql;
 $result = $conn->query($tot_sql);
 
-/*
 if (!$result = $conn->query($total_sql)) {
   // Oh no! The query failed.
-  echo "Sorry, the website is experiencing problems.<BR>";
+  echo "<neg_msg>Sorry, Traininglog is experiencing problems.</neg_msg><BR>";
   echo $total_sql;
 }
-*/
-echo "Test: ".$result->num_rows;
-/*
+
 if ($tot_result->num_rows > 0) {
   // output data of each row
   while($row = $tot_result->fetch_assoc()) {
-    /*
     if (($row['type']=='Cycling') || ($row['type']=='Running')) {
       $dist_unit = 'Miles';
     } else {
       $dist_unit = 'Yds';
     }
-
     echo $row['type'].": ".$row['sum_dist']."<BR>\n";
   }
 } else {
   echo "Sorry - no training logged this year<BR>\n";
 }
-*/
+
 $conn->close();
 
 echo "</body>\n";
