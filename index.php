@@ -53,7 +53,7 @@ echo "<input type=\"submit\" value=\"Log Training\">";
 echo "</form>\n";
 echo "<BR><BR>";
 echo "Annual Totals:<BR>\n";
-$total_sql = "SELECT type, sum(distance) sum_dis FROM training_log GROUP BY type";
+$total_sql = "SELECT type, sum(distance) sum_dist FROM training_log GROUP BY type";
 
 echo $total_sql;
 $tot_result = $conn->query($total_sql);
@@ -65,7 +65,7 @@ if (!$result = $conn->query($total_sql)) {
   echo $total_sql;
 }
 */
-//echo "Test: ".$tot_result->num_rows;
+echo "Test: ".$tot_result->num_rows;
 /*
 if ($tot_result->num_rows > 0) {
   // output data of each row
