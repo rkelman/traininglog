@@ -55,13 +55,12 @@ echo "<BR><BR>";
 echo "Annual Totals:<BR>\n";
 $tot_sql = "SELECT type, sum(distance) sum_dist FROM training_log GROUP BY type";
 
-echo $tot_sql;
-$result = $conn->query($tot_sql);
+$tot_result = $conn->query($tot_sql);
 
-if (!$result = $conn->query($total_sql)) {
+if (!$tot_result = $conn->query($tot_sql)) {
   // Oh no! The query failed.
   echo "<neg_msg>Sorry, Traininglog is experiencing problems.</neg_msg><BR>";
-  echo $total_sql;
+  echo $tot_sql;
 }
 
 if ($tot_result->num_rows > 0) {
