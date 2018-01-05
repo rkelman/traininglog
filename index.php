@@ -57,9 +57,9 @@ $tot_sql = "SELECT type, sum(distance) sum_dist FROM training_log GROUP BY type"
 
 $tot_result = $conn->query($tot_sql);
 
-if (!$tot_result = $conn->query($tot_sql)) {
+if (!$tot_result = $conn->query($total_sql)) {
   // Oh no! The query failed.
-  echo "<neg_msg>Sorry, Traininglog is experiencing problems.</neg_msg><BR>";
+  echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
   echo $tot_sql;
 }
 
@@ -71,7 +71,7 @@ if ($tot_result->num_rows > 0) {
     } else {
       $dist_unit = 'Yds';
     }
-    echo $row['type'].": ".$row['sum_dist']."<BR>\n";
+    echo $row['type'].": ".$row['sum_dist']." ".$dist_unit."<BR>\n";
   }
 } else {
   echo "Sorry - no training logged this year<BR>\n";
