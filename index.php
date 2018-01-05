@@ -58,7 +58,7 @@ $total_sql = "SELECT type, sum(distance) sum_dist
         GROUP BY type";
 
 echo $total_sql;
-$result = $conn->query($total_sql);
+$tot_result = $conn->query($total_sql);
 
 /*
 if (!$result = $conn->query($total_sql)) {
@@ -67,11 +67,11 @@ if (!$result = $conn->query($total_sql)) {
   echo $total_sql;
 }
 */
-echo "Test: ".$result->num_rows;
+echo "Test: ".$tot_result->num_rows;
 
-if ($result->num_rows > 0) {
+if ($tot_result->num_rows > 0) {
   // output data of each row
-  while($row = $result->fetch_assoc()) {
+  while($row = $tot_result->fetch_assoc()) {
     /*
     if (($row['type']=='Cycling') || ($row['type']=='Running')) {
       $dist_unit = 'Miles';
