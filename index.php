@@ -62,7 +62,7 @@ if (!$result = $conn->query($total_sql)) {
   echo "Sorry, the website is experiencing problems.<BR>";
   echo $total_sql;
 }
-/*
+
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
       $dist_unit = 'Miles';
     } else {
       $dist_unit = 'Yds';
-    }
+    }/*
     echo $row['type'].": ".$row['sum(distance)']." ".$dist_unit."<BR>\n";
 } else {
   echo "Sorry - no training logged this year<BR>\n";
