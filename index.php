@@ -71,7 +71,7 @@ if ($result->num_rows > 0) {
     } else {
       $dist_unit = 'Yds';
     }
-    echo $row['type'].": ".$row['sum(distance)']." ".$dist_unit."<BR>\n";*/
+    echo $row['type'].": ".$row['sum(distance)']." ".$dist_unit."<BR>\n";
   }
 } else {
   echo "Sorry - no training logged this year<BR>\n";
