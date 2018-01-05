@@ -56,13 +56,13 @@ echo "Annual Totals:<BR>\n";
 $total_sql = "SELECT type, sum(distance)
         FROM training_log
         GROUP BY type";
-/*
+
 if (!$result = $conn->query($total_sql)) {
-  /* Oh no! The query failed.
+  // Oh no! The query failed.
   echo "Sorry, the website is experiencing problems.<BR>";
   echo $total_sql;
 }
-
+/*
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
