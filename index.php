@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     if (($row['type']=='Cycling') || ($row['type']=='Running')) {
       $dist_unit = 'Miles';
-    } /*else {
+    } else {
       $dist_unit = 'Yds';
     }
     echo $row['type'].": ".$row['sum(distance)']." ".$dist_unit."<BR>\n";*/
