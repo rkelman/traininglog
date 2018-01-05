@@ -74,7 +74,7 @@ if ($tot_result->num_rows > 0) {
     echo $row['type'].": ".$row['sum_dist']." ".$dist_unit."<BR>\n";
   }
 } else {
-  echo "Sorry - no training logged this year<BR>\n";
+  echo "<neg_mesg>Sorry - no training logged this year</neg_mesg><BR>\n";
 }
 
 $conn->close();
