@@ -25,7 +25,7 @@ echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
 echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
 echo "</head>\n";
 echo "<body>\n";
-//echo $ins_sql;
+echo $ins_sql;
 if ($ins_trainlog) {
   if ($sport == 'Cycling') {
     $activity = 'ride';
@@ -36,6 +36,7 @@ if ($ins_trainlog) {
   }
   echo "<pos_mesg>New ".$activity." logged successfully</pos_mesg><BR><BR>\n";
 }
+
 echo "<form action=\"index.php\" method=\"post\">\n";
 echo "Enter new training activity:<BR>\n";
 echo "Distance (mi/yds): ";
