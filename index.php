@@ -5,8 +5,14 @@ $conn = connectDB();
 
 if (isset($_POST["sport"])) {
   $sport = $_POST["sport"];
-  $dist = $_POST["distance"];
   $time = $_POST["time"];
+
+  //if distance is not set (like for circuit) set it to 0
+  if (isset($_POST["distance"]) {
+    $dist = $_POST["distance"];
+  } else {
+    $dist = 0;
+  }
 
   if ($conn->connect_errno > 0) {
     die("<neg_mesg>Connection failed: ".$conn->connect_error."</neg_mesg>");
@@ -25,7 +31,8 @@ echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
 echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
 echo "</head>\n";
 echo "<body>\n";
-echo $ins_sql;
+//troubleshooting insert statements
+//echo $ins_sql;
 if ($ins_trainlog) {
   if ($sport == 'Cycling') {
     $activity = 'ride';
