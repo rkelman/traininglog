@@ -76,12 +76,13 @@ if ($tot_result->num_rows > 0) {
   while($row = $tot_result->fetch_assoc()) {
     if ($row['type']=='Cycling') {
       $dist_unit = 'Miles';
-      $target = 4000*(date('z')+1)/365;
+      $target = number_format(4000*(date('z')+1)/365, 2);
     } elseif ($row['type']=='Running') {
       $dist_unit = 'Miles';
-      $target = 370*(date('z')+1)/365;
+      $target = number_format(370*(date('z')+1)/365, 2);
     } else {
       $dist_unit = 'Yds';
+      $target = "";
     }
     echo $row['type'].": ".$row['sum_dist']." ".$dist_unit."; Target: ".$target." ".$dist_unit."<BR>\n";
   }
