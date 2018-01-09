@@ -17,24 +17,19 @@ if (isset($_POST["username"])) {
       echo $tot_sql;
     }
 }
-
 echo "<html>\n";
 echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
 echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
 echo "</head>\n";
 echo "<body>\n";
 echo "<form action=\"login.php\" method=\"post\">\n";
-echo "First Name: ";
-echo "<input type=\"text\" name=\"first_name\"><BR>\n";
-echo "Last Name: ";
-echo "<input type=\"text\" name=\"last_name\"><BR>\n";
-echo "eMail: ";
+echo "Username: ";
 echo "<input type=\"text\" name=\"username\"><BR>\n";
 echo "Password: ";
 echo "<input type=\"password\" name=\"password\"><BR>\n";
-echo "Confirm Password: ";
-echo "<input type=\"password\" name=\"password\"><BR>\n";
 echo "</form>\n";
+echo "<a href=\"register.php\">Create Account</a> ";
+echo " <a href=\"reset.php\">Forgot Password</a>";
 
 $conn->close();
 
