@@ -84,7 +84,7 @@ if ($tot_result->num_rows > 0) {
       $dist_unit = 'Yds';
       $target = "";
     }
-    echo $row['type'].": ".$row['sum_dist']." ".$dist_unit." Total Duration: ".$row['sum_time']."; Target: ".$target." ".$dist_unit."<BR>\n";
+    echo $row['type'].": ".$row['sum_dist']." ".$dist_unit."; Total Duration: ".$row['sum_time']."; Target: ".$target." ".$dist_unit."<BR>\n";
   }
 } else {
   echo "<neg_mesg>Sorry - no training logged this year</neg_mesg><BR>\n";
