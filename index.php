@@ -63,8 +63,8 @@ echo "<BR><BR>";
 echo "Annual Totals for ".date('M j').":<BR>\n";
 $tot_sql = "SELECT type, count(type) count_type, sum(distance) sum_dist, SEC_TO_TIME(SUM(TIME_TO_SEC(elapsedTime))) sum_time
   FROM trainingLog
-  GROUP BY type
-  WHERE userID = 7";
+  WHERE userID = 7
+  GROUP BY type";
 
 $tot_result = $conn->query($tot_sql);
 
