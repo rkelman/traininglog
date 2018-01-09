@@ -9,9 +9,7 @@ if (isset($_POST["username"])) {
 
   $log_sql = "SELECT email, password, ID
     FROM tlUsers
-    WHERE email = '".$user."';
-
-    $log_result = $conn->query($log_sql);
+    WHERE email = '".$user."'";
 
     if (!$log_result = $conn->query($tot_sql)) {
       // Oh no! The query failed.
@@ -33,4 +31,10 @@ echo "Password";
 echo "<input type=\"password\" name=\"password\"><BR>\n";
 echo "</form>\n";
 echo "<href>Create Account</href>"
+
+$conn->close();
+
+echo "</body>\n";
+echo "</html>";
+
 ?>

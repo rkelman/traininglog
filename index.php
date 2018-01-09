@@ -66,8 +66,6 @@ $tot_sql = "SELECT type, count(type) count_type, sum(distance) sum_dist, SEC_TO_
   WHERE userID = 7
   GROUP BY type";
 
-//$tot_result = $conn->query($tot_sql);
-
 if (!$tot_result = $conn->query($tot_sql)) {
   // Oh no! The query failed.
   echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
