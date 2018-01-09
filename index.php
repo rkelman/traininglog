@@ -60,7 +60,7 @@ echo "</select><BR>\n";
 echo "<input type=\"submit\" value=\"Log Training\">";
 echo "</form>\n";
 echo "<BR><BR>";
-echo "Annual Totals for ".date(M j).":<BR>\n";
+echo "Annual Totals for ".date('M j').":<BR>\n";
 $tot_sql = "SELECT type, sum(distance) sum_dist FROM training_log GROUP BY type";
 
 $tot_result = $conn->query($tot_sql);
@@ -76,10 +76,10 @@ if ($tot_result->num_rows > 0) {
   while($row = $tot_result->fetch_assoc()) {
     if ($row['type']=='Cycling') {
       $dist_unit = 'Miles';
-      $target = 4000*(date(z)+1)/365;
+      $target = 4000*(date('z')+1)/365;
     } elseif ($row['type']=='Running') {
       $dist_unit = 'Miles';
-      $target = 370*(date(z)+1)/365;
+      $target = 370*(date('z')+1)/365;
     } else {
       $dist_unit = 'Yds';
     }
