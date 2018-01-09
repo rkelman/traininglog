@@ -30,7 +30,8 @@ echo "<input type=\"text\" name=\"username\"><BR>\n";
 echo "Password";
 echo "<input type=\"password\" name=\"password\"><BR>\n";
 echo "</form>\n";
-echo "<href>Create Account</href>"
+echo "<href>Create Account</href>";
+echo "<href>Forgot Password</href>";
 
 $conn->close();
 
