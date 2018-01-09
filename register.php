@@ -20,7 +20,6 @@ if (isset($_POST["username"])) {
       echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
       echo $tot_sql;
     }
-
 }
 
 echo "<html>\n";
