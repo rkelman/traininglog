@@ -61,7 +61,7 @@ echo "<input type=\"submit\" value=\"Log Training\">";
 echo "</form>\n";
 echo "<BR><BR>";
 echo "Annual Totals for ".date('M j').":<BR>\n";
-$tot_sql = "SELECT type, sum(distance) sum_dist FROM training_log GROUP BY type";
+$tot_sql = "SELECT type, sum(distance) sum_dist, SEC_TO_TIME(SUM(TIME_TO_SEC(elapsedTime))) sum_time FROM training_log GROUP BY type";
 
 $tot_result = $conn->query($tot_sql);
 
@@ -84,7 +84,7 @@ if ($tot_result->num_rows > 0) {
       $dist_unit = 'Yds';
       $target = "";
     }
-    echo $row['type'].": ".$row['sum_dist']." ".$dist_unit."; Target: ".$target." ".$dist_unit."<BR>\n";
+    echo $row['type'].": ".$row['sum_dist']." ".$dist_unit." Total Duration: ".$row['sum_time']."; Target: ".$target." ".$dist_unit."<BR>\n";
   }
 } else {
   echo "<neg_mesg>Sorry - no training logged this year</neg_mesg><BR>\n";
