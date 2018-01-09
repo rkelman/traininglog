@@ -2,16 +2,20 @@
 include 'connection.php';
 
 if (isset($_POST["username"])) {
-  $user = $_POST["username"];
+  $username = $_POST["username"];
   $passwd = $_POST["password"];
+  $passwd2 = $_POST["conf_password"];
+  $fname = $_POST["first_name"];
+  $lname = $_POST["last_name"];
 
   $conn = connectDB();
 
-  $log_sql = "SELECT email, password, ID
-    FROM tlUsers
-    WHERE email = '".$user."'";
+  $reg_sql = "INSERT into tlUsers
+    (email, password, firstName, lastName)
+    VALUES
+    ('".$username."', '".$passwd."', '".$fname."', '".$lname."')";
 
-    if (!$log_result = $conn->query($tot_sql)) {
+    if (!$reg_result = $conn->query($reg_sql)) {
       // Oh no! The query failed.
       echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
       echo $tot_sql;
