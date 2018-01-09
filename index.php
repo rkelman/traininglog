@@ -19,9 +19,9 @@ if (isset($_POST["sport"])) {
   }
 
   $ins_sql = "INSERT into trainingLog
-      (trainDate, distance, elapsedTime, type)
+      (trainDate, distance, elapsedTime, type, userID)
       VALUES
-      (now(), ".$dist.", '".$time."', '".$sport."')";
+      (now(), ".$dist.", '".$time."', '".$sport."', 7)";
 
   $ins_trainlog=$conn->query($ins_sql);
 
@@ -61,7 +61,10 @@ echo "<input type=\"submit\" value=\"Log Training\">";
 echo "</form>\n";
 echo "<BR><BR>";
 echo "Annual Totals for ".date('M j').":<BR>\n";
-$tot_sql = "SELECT type, sum(distance) sum_dist, SEC_TO_TIME(SUM(TIME_TO_SEC(elapsedTime))) sum_time FROM trainingLog GROUP BY type";
+$tot_sql = "SELECT type, sum(distance) sum_dist, SEC_TO_TIME(SUM(TIME_TO_SEC(elapsedTime))) sum_time
+  FROM trainingLog
+  GROUP BY type
+  WHERE userID = 7";
 
 $tot_result = $conn->query($tot_sql);
 
