@@ -15,15 +15,15 @@ if (isset($_POST["username"])) {
     // Oh no! The query failed.
     echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
     echo $tot_sql;
-  } elseif ($log_result->num_rows() = 0) {
+  } elseif ($log_result->num_rows() == 0) {
     echo "<neg_mesg>Sorry, that username was not found.</neg_mesg><BR>";
   } else {
     $row = $log_result->fetch_assoc();
-    if (hash('gost', $passwd)==$row['password']){
+    if (hash('gost', $passwd)==$row['password']) {
       $cookie_value=$row['ID'];
       setcookie('uid', $cookie_value, time() + (5184000), "/"); // 5184000 = 60 days
       header("Location:index.php");
-    } elseif (hash('gost', $passwd)==$row['password']) {
+    } elseif (hash('gost', $passwd)!=$row['password']) {
        echo "<neg_mesg>Sorry, that password was not valid.</neg_mesg><BR>";
     }
   }
@@ -38,6 +38,7 @@ echo "Username: ";
 echo "<input type=\"text\" name=\"username\"><BR>\n";
 echo "Password: ";
 echo "<input type=\"password\" name=\"password\"><BR>\n";
+echo "<input type=\"submit\" name=\"Login\"><BR>\n";
 echo "</form>\n";
 echo "<a href=\"register.php\">Create Account</a> ";
 echo " <a href=\"reset.php\">Forgot Password</a>";
