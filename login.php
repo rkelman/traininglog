@@ -13,10 +13,10 @@ if (isset($_POST["username"])) {
 
   if (!$log_result = $conn->query($log_sql)) {
     // Oh no! The query failed.
-    echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
+    $errString = "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
     echo $tot_sql;
   } elseif ($log_result->num_rows() == 0) {
-    echo "<neg_mesg>Sorry, that username was not found.</neg_mesg><BR>";
+    $errString = "<neg_mesg>Sorry, that username was not found.</neg_mesg><BR>";
   } else {
     $row = $log_result->fetch_assoc();
     if (hash('gost', $passwd)==$row['password']) {
@@ -24,7 +24,7 @@ if (isset($_POST["username"])) {
       setcookie('uid', $cookie_value, time() + (5184000), "/"); // 5184000 = 60 days
       header("Location:index.php");
     } elseif (hash('gost', $passwd)!=$row['password']) {
-       echo "<neg_mesg>Sorry, that password was not valid.</neg_mesg><BR>";
+       $errString = "<neg_mesg>Sorry, that password was not valid.</neg_mesg><BR>";
     }
   }
 }
@@ -33,6 +33,9 @@ echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
 echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
 echo "</head>\n";
 echo "<body>\n";
+if (isset($errString)) {
+  echo $errString;
+}
 echo "<form action=\"login.php\" method=\"post\">\n";
 echo "Username: ";
 echo "<input type=\"text\" name=\"username\"><BR>\n";
