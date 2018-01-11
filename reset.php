@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-include 'userkey.php'
+include 'userkey.php';
 
 $conn = connectDB();
 
@@ -44,7 +44,7 @@ if (isset($_POST["password"])) {
     echo "</html>";
   }
 
-//if the user has simply requested the
+//if the user has simply requested the reset
 } elsif (isset($_GET["email"])) {
   $username = $_GET["email"];
 
@@ -58,6 +58,7 @@ if (isset($_POST["password"])) {
   echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
   echo "</head>\n";
   echo "<body>\n";
+  echo "Please enter e-mail to reset password<BR><BR>";
   echo "<form action=\"reset.php\" method=\"get\">\n";
   echo "eMail: ";
   echo "<input type=\"text\" name=\"username\"><BR>\n";
