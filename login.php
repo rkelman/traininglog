@@ -4,16 +4,14 @@ include 'connection.php';
 if (isset($_POST["username"])) {
   $username = $_POST["username"];
   $passwd = $_POST["password"];
-  echo $username;
-  echo " ".$passwd;
+  //echo $username;
+  //echo " ".$passwd;
 
   $conn = connectDB();
 
   $log_sql = "SELECT email, password, ID
     FROM tlUsers
     WHERE email = '".$username."'";
-
-  echo $log_sql;
 
   if (!$log_result = $conn->query($log_sql)) {
     // Oh no! The query failed.
