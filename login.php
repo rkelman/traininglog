@@ -4,6 +4,8 @@ include 'connection.php';
 if (isset($_POST["username"])) {
   $username = $_POST["username"];
   $passwd = $_POST["password"];
+  echo $username;
+  echo " ".$passwd;
 
   $conn = connectDB();
 
@@ -15,7 +17,8 @@ if (isset($_POST["username"])) {
     // Oh no! The query failed.
     $errString = "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
     echo $tot_sql;
-  } elseif ($log_result->num_rows() == 0) {
+  } elseif ($log_result->num_rows(
+    ) == 0) {
     $errString = "<neg_mesg>Sorry, that username was not found.</neg_mesg><BR>";
   } else {
     $row = $log_result->fetch_assoc();
