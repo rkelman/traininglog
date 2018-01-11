@@ -19,11 +19,13 @@ if (isset($_POST["username"])) {
     $errString = "<neg_mesg>Sorry, that username was not found.</neg_mesg><BR>";
   } else {
     $row = $log_result->fetch_assoc();
-    if (hash('gost', $passwd)==$row['password']) {
+    if ($passwd == $row['password']) {
+    //if (hash('gost', $passwd)==$row['password']) {
       $cookie_value=$row['ID'];
       setcookie('uid', $cookie_value, time() + (5184000), "/"); // 5184000 = 60 days
       header("Location:index.php");
-    } elseif (hash('gost', $passwd)!=$row['password']) {
+    } //elseif (hash('gost', $passwd)!=$row['password']) {
+      elseif ($passwd != $row['password']) {
        $errString = "<neg_mesg>Sorry, that password was not valid.</neg_mesg><BR>";
     }
   }
