@@ -78,7 +78,7 @@ if ($tot_result->num_rows > 0) {
     if ($row['type']=='Cycling') {
       $dist_unit = 'Miles';
       $target = number_format(4000*(date('z')+1)/365, 2);
-    } elseif (($row['type']=='Run')  {
+    } elseif ($row['type']=='Run')  {
       $dist_unit = 'Miles';
       $target = number_format(370*(date('z')+1)/365, 2);
     } else {
