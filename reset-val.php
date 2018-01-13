@@ -6,7 +6,6 @@ $conn = connectDB();
 
 if (isset($_POST["email"])) {
   $username = $_POST["email"];
-  echo " so far so good";
   $res_sql = "SELECT * from tlUsers where email = '".$username."'";
 
   if (!$res_result = $conn->query($res_sql)) {
@@ -17,6 +16,7 @@ if (isset($_POST["email"])) {
 
   if ($res_result->num_rows > 0) {
     $key = createUserKey($username);
+    echo $key;
     emailUserKey($username, $key);
 
     echo "<html>\n";
@@ -31,7 +31,7 @@ if (isset($_POST["email"])) {
   }
 //if somehow they got to this page without entering their email send them back
 } else {
-  header('Location: reset.php');
+  header('Location: reseta.php');
 }
 
 $conn->close();
