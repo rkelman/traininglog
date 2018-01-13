@@ -1,13 +1,13 @@
 <?php
 include 'connection.php';
-include 'userkey.php';
+//include 'userkey.php';
 
 $conn = connectDB();
 
 if (isset($_POST["email"])) {
   $username = $_POST["email"];
-
-  $res_sql = "Select * from tlUsers where email = '".$username."'";
+  echo " so far so good";
+  $res_sql = "SELECT * from tlUsers where email = '".$username."'";
 
   if (!$res_result = $conn->query($res_sql)) {
     // Oh no! The query failed.
