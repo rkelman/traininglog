@@ -1,10 +1,10 @@
 <?php
-/*
+
 function createUserKey($name) {
   $key=hash('gost',$name.date('z'));
   return $key;
 }
-
+/*
 function validateUserKey($name, $key) {
   if ($key == hash('gost',$name.date('z')){
     return 1;
