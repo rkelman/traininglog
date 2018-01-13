@@ -1,5 +1,5 @@
 <?php
-
+/*
 function createUserKey($name) {
   $key=hash('gost',$name.date('z'));
   return $key;
@@ -21,7 +21,7 @@ function mailUserKey($name, $key) {
 
   $message = "As you requested here is the link to reset your password
   traininglog.daxhund.com/reset.php?name=".$name."&key=".$key;
-    mail($name, $subject, $message, $headers);
+  mail($name, $subject, $message, $headers);
 }
-
+*/
 ?>
