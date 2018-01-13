@@ -6,8 +6,9 @@ $conn = connectDB();
 
 if (isset($_POST["email"])) {
   $username = $_POST["email"];
+  echo $username."<BR>\n";
   $res_sql = "SELECT * from tlUsers where email = '".$username."'";
-
+  echo $res_sql;
   if (!$res_result = $conn->query($res_sql)) {
     // Oh no! The query failed.
     echo "<neg_mesg>Sorry, Traininglog is experiencing problems.</neg_mesg><BR>";
