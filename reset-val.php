@@ -18,7 +18,7 @@ if (isset($_POST["email"])) {
   if ($res_result->num_rows > 0) {
     $key = createUserKey($username);
     echo $key;
-    emailUserKey($username, $key);
+    mailUserKey($username, $key);
 
     echo "<html>\n";
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
