@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-//include 'userkey.php';
+include 'userkey.php';
 
 $conn = connectDB();
 
