@@ -1,6 +1,5 @@
 <?php
 
-
 function createUserKey($name) {
   $key=hash('gost',$name.date('z'));
   return $key;
