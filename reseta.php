@@ -48,9 +48,8 @@ if (!isset($_POST["email"]) && !isset($_GET["email"])) {
     echo "</body>\n";
     echo "</html>";
  } else {
-   header('Location: reseta.php?err=InvalidName')
+   header('Location: reseta.php?err=InvalidName');
  }
-//if somehow they got to this page without entering their email send them back
 }
 
 $conn->close()
