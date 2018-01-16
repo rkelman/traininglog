@@ -5,8 +5,8 @@ include 'userkey.php';
 $conn = connectDB();
 
 print_r($_GET);
- 
-if (!isset($_POST["email"]) && !isset($_GET["name"])) {
+
+if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   echo "<html>\n";
   echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
   echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
@@ -56,8 +56,8 @@ if (!isset($_POST["email"]) && !isset($_GET["name"])) {
  } else {
    header('Location: reseta.php?err=InvalidName');
  }
-} elseif (isset($_GET["name"]) && isset($_GET["key"])) {
-  if validateUserKey($_GET["name"], $_GET["key"]) {
+} elseif (isset($_GET['mail']) && isset($_GET['key'])) {
+  if validateUserKey($_GET['name'], $_GET['key']) {
     //Allow user to enter new password_conf
     echo "<html>\n";
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
