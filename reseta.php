@@ -11,7 +11,11 @@ if (!isset($_POST["email"]) && !isset($_GET["email"])) {
   echo "</head>\n";
   echo "<body>\n";
   if (isset($_GET["err"])) {
-    echo "<neg_mesg>Sorry, The email you entered is not registered to a Traininglog user.</neg_mesg><BR>";
+    if ($_GET["err"]=="InvalidKey") {
+      echo "<neg_mesg>Sorry, The key that you used appears to be expired, please request a new one.</neg_mesg><BR>";
+    } elseif ($_GET["err"]=="InvalidName")
+      echo "<neg_mesg>Sorry, The email you entered is not registered to a Traininglog user.</neg_mesg><BR>";
+    }
   }
   echo "Please enter e-mail to reset password<BR><BR>";
   echo "<form action=\"reseta.php\" method=\"post\">\n";
@@ -50,6 +54,27 @@ if (!isset($_POST["email"]) && !isset($_GET["email"])) {
  } else {
    header('Location: reseta.php?err=InvalidName');
  }
+} elseif (isset($_GET["email"]) && isset($_GET["key"])) {
+  if validateUserKey($_GET["email"], $_GET["key"]) {
+    //Allow user to enter new password_conf
+    echo "<html>\n";
+    echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
+    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
+    echo "</head>\n";
+    echo "<body>\n";
+    echo "<form action=\"resetpass.php\" method=\"post\">\n";
+    echo "Password: ";
+    echo "<input type=\"password\" name=\"password\"><BR>\n";
+    echo "Confirm Password: ";
+    echo "<input type=\"password\" name=\"password_conf\"><BR>\n";
+    echo "<input type=\"submit\" name=\"Reset Password\"><BR>\n";
+    echo "</form>\n";
+    echo "</body>\n";
+    echo "</html>";
+  } else {
+    //otherwise let the user know their key is invalid
+    header('Location: reseta.php?err=InvalidKey');
+  }
 }
 
 $conn->close()
