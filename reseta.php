@@ -4,6 +4,8 @@ include 'userkey.php';
 
 $conn = connectDB();
 
+print_r($_GET);
+ 
 if (!isset($_POST["email"]) && !isset($_GET["name"])) {
   echo "<html>\n";
   echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
