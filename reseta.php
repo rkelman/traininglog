@@ -53,11 +53,11 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "Please check your email to complete the reset process<BR>\n";
     echo "</body>\n";
     echo "</html>";
- } else {
-   header('Location: reseta.php?err=InvalidName');
- }
+  } else {
+    header('Location: reseta.php?err=InvalidName');
+  }
 } elseif (isset($_GET['mail']) && isset($_GET['key'])) {
-  if validateUserKey($_GET['name'], $_GET['key']) {
+  if validateUserKey($_GET['mail'], $_GET['key']) {
     //Allow user to enter new password_conf
     echo "<html>\n";
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
