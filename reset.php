@@ -12,7 +12,6 @@ if (isset($_POST["password"])) {
   $passwd2 = $_POST["password_conf"];
 // check values and insert into db
 
-
 //if the user has received the key in email
 } elseif (isset($_GET["key"])) {
   $username = $_GET["name"];
