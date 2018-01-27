@@ -58,7 +58,9 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     header('Location: reseta.php?err=InvalidName');
   }
 } elseif (isset($_GET['mail']) && isset($_GET['key'])) {
-  if validateUserKey($_GET['mail'], $_GET['key']) {
+  $mailID = $GET['mail'];
+  $keyID = $GET['key'];
+  if validateUserKey($mailID, $keyID) {
     //Allow user to enter new password_conf
     echo "<html>\n";
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
