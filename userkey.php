@@ -1,5 +1,9 @@
 <?php
 
+function getPassHash ($pass) {
+  return hash('gost', $pass); 
+}
+
 function createUserKey($name) {
   $key=hash('gost',$name.date('z'));
   return $key;
