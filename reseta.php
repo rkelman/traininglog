@@ -63,11 +63,11 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   if (validateUserKey($mailID, $keyID)) {
     //Allow user to enter new password_conf
     echo "<html>\n";
-  /*  echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
+    echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
     echo "<body>\n";
-    echo "<form action=\"resetpass.php\" method=\"post\">\n";
+    /*echo "<form action=\"resetpass.php\" method=\"post\">\n";
     echo "Password: ";
     echo "<input type=\"password\" name=\"password\"><BR>\n";
     echo "Confirm Password: ";
