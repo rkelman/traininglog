@@ -60,10 +60,10 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
 } elseif (isset($_GET['mail']) && isset($_GET['key'])) {
   $mailID = $GET['mail'];
   $keyID = $GET['key'];
-  /*if (validateUserKey($mailID, $keyID)) {
+  if (validateUserKey($mailID, $keyID)) {
     //Allow user to enter new password_conf
     echo "<html>\n";
-    echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
+  /*  echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
     echo "<body>\n";
@@ -80,8 +80,8 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</html>";
   } else {
     //otherwise let the user know their key is invalid
-    header('Location: reseta.php?err=InvalidKey');
-  }*/
+    header('Location: reseta.php?err=InvalidKey');*/
+  }
 }
 
 $conn->close()
