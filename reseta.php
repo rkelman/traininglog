@@ -67,7 +67,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
     echo "<body>\n";
-    /*echo "<form action=\"resetpass.php\" method=\"post\">\n";
+    echo "<form action=\"resetpass.php\" method=\"post\">\n";
     echo "Password: ";
     echo "<input type=\"password\" name=\"password\"><BR>\n";
     echo "Confirm Password: ";
@@ -78,7 +78,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</form>\n";
     echo "</body>\n";
     echo "</html>";
-  } else {
+  /*} else {
     //otherwise let the user know their key is invalid
     header('Location: reseta.php?err=InvalidKey');*/
   }
