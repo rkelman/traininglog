@@ -20,7 +20,7 @@ function mailUserKey($name, $key) {
   $subject = "Training Log Password Reset";
 
   $message = "As you requested here is the link to reset your password
-  traininglog.daxhund.com/reseta.php?mail=".$name."&key=".$key;
+  traininglog.daxhund.com/reset.php?mail=".$name."&key=".$key;
   mail($name, $subject, $message, $headers);
 }
 
