@@ -6,7 +6,7 @@ function createUserKey($name) {
 }
 
 function validateUserKey($name, $key) {
-  if ($key == hash('gost',$name.date('z'))){
+  if ($key == hash('gost',$name.date('z'))) {
     return true;
   } else {
     return false;

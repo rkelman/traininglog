@@ -60,7 +60,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
 } elseif (isset($_GET['mail']) && isset($_GET['key'])) {
   $mailID = $GET['mail'];
   $keyID = $GET['key'];
-  if validateUserKey($mailID, $keyID) {
+  /*if (validateUserKey($mailID, $keyID)) {
     //Allow user to enter new password_conf
     echo "<html>\n";
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
@@ -72,8 +72,8 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<input type=\"password\" name=\"password\"><BR>\n";
     echo "Confirm Password: ";
     echo "<input type=\"password\" name=\"password_conf\"><BR>\n";
-    echo "<input type=\"hidden\" id=\"mailID\" name=\"mail\" value=\"".$_GET['mail']."\">\n";
-    echo "<input type=\"hidden\" id=\"keyID\" name=\"key\" value=\"".$_GET['key']."\">\n";
+    echo "<input type=\"hidden\" id=\"mailID\" name=\"mail\" value=\"".$mailID."\">\n";
+    echo "<input type=\"hidden\" id=\"keyID\" name=\"key\" value=\"".$keyID."\">\n";
     echo "<input type=\"submit\" name=\"Reset Password\"><BR>\n";
     echo "</form>\n";
     echo "</body>\n";
@@ -81,7 +81,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   } else {
     //otherwise let the user know their key is invalid
     header('Location: reseta.php?err=InvalidKey');
-  }
+  }*/
 }
 
 $conn->close()
