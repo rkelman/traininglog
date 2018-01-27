@@ -55,7 +55,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</body>\n";
     echo "</html>";
   } else {
-    header('Location: reseta.php?err=InvalidName');
+    header:('Location: reseta.php?err=InvalidName');
   }
 } elseif (isset($_GET['mail']) && isset($_GET['key'])) {
   $mailID = $GET['mail'];
@@ -80,8 +80,9 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</html>";
   } else {
     //otherwise let the user know their key is invalid
-    echo "emailed key: ".$keyID."<BR>";
-    echo "funcion: ".hash('gost',$mailID.date('z'));
+    echo "email: ".$mailID."<BR>\n";
+    echo "emailed key: ".$keyID."<BR>\n";
+    echo "function: ".hash('gost',$mailID.date('z'));
     //header('Location: reseta.php?err=InvalidKey');
   }
 }
