@@ -27,7 +27,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   echo "</form>\n";
   echo "</body>\n";
   echo "</html>";
-}  elseif (isset($_POST["email"])) {
+/*}  elseif (isset($_POST["email"])) {
   $username = $_POST["email"];
   //echo $username."<BR>\n";
   $res_sql = "SELECT * from tlUsers where email = '".$username."'";
@@ -76,7 +76,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   } else {
     //otherwise let the user know their key is invalid
     header('Location: reseta.php?err=InvalidKey');
-  }
+  }*/
 }
 
 $conn->close()
