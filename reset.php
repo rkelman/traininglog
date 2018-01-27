@@ -18,6 +18,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
       echo "<neg_mesg>Sorry, The key that you used appears to be expired, please request a new one.</neg_mesg><BR>";
     } elseif ($_GET["err"]=="InvalidName") {
       echo "<neg_mesg>Sorry, The email you entered is not registered to a Traininglog user.</neg_mesg><BR>";
+      echo "<a href=\"register.php\">Create New Account</a><BR>";
     }
   }
   echo "Please enter e-mail to reset password<BR><BR>";
