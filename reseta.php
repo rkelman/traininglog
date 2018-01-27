@@ -78,12 +78,12 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</form>\n";
     echo "</body>\n";
     echo "</html>";
-  /*} else {
+  } else {
     //otherwise let the user know their key is invalid
-    header('Location: reseta.php?err=InvalidKey');*/
+    header('Location: reseta.php?err=InvalidKey');
   }
 }
 
-$conn->close()
+$conn->close();
 
 ?>
