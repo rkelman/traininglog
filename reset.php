@@ -55,7 +55,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</body>\n";
     echo "</html>";
   } else {
-    header:('Location: reset.php?err=InvalidName');
+    header('Location: reset.php?err=InvalidName');
   }
 } elseif (isset($_GET['mail']) && isset($_GET['key'])) {
   $mailID = $_GET['mail'];
