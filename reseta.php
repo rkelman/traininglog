@@ -57,9 +57,9 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   } else {
     header:('Location: reseta.php?err=InvalidName');
   }
-} elseif (isset($_GET['mail']) && isset($_GET['key'])) {
-  $mailID = $GET['mail'];
-  $keyID = $GET['key'];
+} elseif (isset($_GET["mail"]) && isset($_GET["key"])) {
+  $mailID = $GET["mail"];
+  $keyID = $GET["key"];
   if (validateUserKey($mailID, $keyID)) {
     //Allow user to enter new password_conf
     echo "<html>\n";
