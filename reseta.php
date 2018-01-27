@@ -4,7 +4,7 @@ include 'userkey.php';
 
 $conn = connectDB();
 
-print_r($_GET);
+//print_r($_GET);
 
 if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   echo "<html>\n";
@@ -27,7 +27,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   echo "</form>\n";
   echo "</body>\n";
   echo "</html>";
-/*}  elseif (isset($_POST["email"])) {
+}  elseif (isset($_POST["email"])) {
   $username = $_POST["email"];
   //echo $username."<BR>\n";
   $res_sql = "SELECT * from tlUsers where email = '".$username."'";
@@ -56,7 +56,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   } else {
     header('Location: reseta.php?err=InvalidName');
   }
-} elseif (isset($_GET['mail']) && isset($_GET['key'])) {
+/*} elseif (isset($_GET['mail']) && isset($_GET['key'])) {
   if validateUserKey($_GET['mail'], $_GET['key']) {
     //Allow user to enter new password_conf
     echo "<html>\n";
