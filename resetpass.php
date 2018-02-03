@@ -12,6 +12,8 @@ if (!isset($_POST['password']) && !isset($_POST['password_conf'])) {
   $pass2 = $_POST['password_conf'];
   $mailID = $_POST['mail'];
   $keyID = $_POST['key'];
+  echo "pass: ".$pass1."<BR>\n";
+  echo "mail: ".$mailID."<BR>\n";
   if ($pass1 == $pass2) {
     $hashPass = getPassHash($pass1);
     $res_sql = "Update tlUsers SET password='".$hashPass."' ".
