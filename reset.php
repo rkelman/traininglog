@@ -67,7 +67,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
-    echo "<body>\n";
+    echo "<body>\n";/*
     if (isset($_GET['err']) {
       $err = $_GET['err'];
       if ($err == "passMismatch") {
@@ -86,14 +86,14 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<input type=\"submit\" name=\"Reset Password\"><BR>\n";
     echo "</form>\n";
     echo "</body>\n";
-    echo "</html>";
-  } else {
+    echo "</html>";*/
+  } /*else {
     //otherwise let the user know their key is invalid
     //echo "email: ".$mailID."<BR>\n";
     //echo "emailed key: ".$keyID."<BR>\n";
     //echo "function: ".hash('gost',$mailID.date('z'));
     header('Location: reset.php?err=InvalidKey');
-  }
+  }*/
 }
 
 $conn->close();
