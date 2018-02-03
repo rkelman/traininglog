@@ -21,8 +21,7 @@ if (isset($_POST["username"])) {
     $errString = "<neg_mesg>Sorry, that username was not found.</neg_mesg><BR>";
   } else {
     $row = $log_result->fetch_assoc();
-    if ($passwd == $row['password']) {
-    //if (hash('gost', $passwd)==$row['password']) {
+    if (hash('gost', $passwd)==$row['password']) {
       $cookie_value=$row['ID'];
       setcookie('uid', $cookie_value, time() + (5184000), "/"); // 5184000 = 60 days
       header("Location:index.php");
