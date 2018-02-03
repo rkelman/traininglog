@@ -58,7 +58,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
   } else {
     header('Location: reset.php?err=InvalidName');
   }
-} elseif (isset($_GET['mail']) && isset($_GET['key'])) {
+}/* elseif (isset($_GET['mail']) && isset($_GET['key'])) {
   $mailID = $_GET['mail'];
   $keyID = $_GET['key'];
   if (validateUserKey($mailID, $keyID)) {
@@ -94,7 +94,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     //echo "function: ".hash('gost',$mailID.date('z'));
     header('Location: reset.php?err=InvalidKey');
   }
-}
+}*/
 
 $conn->close();
 
