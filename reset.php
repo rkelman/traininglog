@@ -86,7 +86,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<input type=\"submit\" name=\"Reset Password\"><BR>\n";
     echo "</form>\n";
     echo "</body>\n";
-    echo "</html>";*/
+    echo "</html>";
   } else {
     //otherwise let the user know their key is invalid
     //echo "email: ".$mailID."<BR>\n";
