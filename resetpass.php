@@ -33,6 +33,7 @@ if (isset($_POST['password']) && isset($_POST['password_conf'])) {
       echo "<body>\n";
       echo "Your Password has been updated<BR>";
       echo "<a href=\"login.php\">Go to login</a><BR>";
+    }
   } else {
     //if passwords don't match return to reset
     header('Location: reset.php?mail='.$mailID.'&key='.$keyID.'&err=passMismatch');
