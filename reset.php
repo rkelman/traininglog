@@ -67,7 +67,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
-    echo "<body>\n";/*
+    echo "<body>\n";
     if (isset($_GET['err']) {
       $err = $_GET['err'];
       if ($err == "passMismatch") {
@@ -75,7 +75,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
       } elseif ($err == "passNull") {
         echo "<neg_mesg>Sorry, Passwords cannot be null.</neg_mesg><BR>";
       }
-    }
+    }/*
     echo "<form action=\"resetpass.php\" method=\"post\">\n";
     echo "Password: ";
     echo "<input type=\"password\" name=\"password\"><BR>\n";
