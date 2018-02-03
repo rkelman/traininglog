@@ -68,7 +68,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
     echo "<body>\n";
-    if (isset($_GET['err']) {
+    if (isset($_GET['err'])) {
       $err = $_GET['err'];
       if ($err == "passMismatch") {
         echo "<neg_mesg>Sorry, Passwords did not match.</neg_mesg><BR>";
