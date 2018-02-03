@@ -75,7 +75,7 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
       } elseif ($err == "passNull") {
         echo "<neg_mesg>Sorry, Passwords cannot be null.</neg_mesg><BR>";
       }
-    }/*
+    }
     echo "<form action=\"resetpass.php\" method=\"post\">\n";
     echo "Password: ";
     echo "<input type=\"password\" name=\"password\"><BR>\n";
@@ -87,13 +87,13 @@ if (!isset($_POST["email"]) && !isset($_GET['mail'])) {
     echo "</form>\n";
     echo "</body>\n";
     echo "</html>";*/
-  } /*else {
+  } else {
     //otherwise let the user know their key is invalid
     //echo "email: ".$mailID."<BR>\n";
     //echo "emailed key: ".$keyID."<BR>\n";
     //echo "function: ".hash('gost',$mailID.date('z'));
     header('Location: reset.php?err=InvalidKey');
-  }*/
+  }
 }
 
 $conn->close();
