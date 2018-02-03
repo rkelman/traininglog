@@ -4,7 +4,7 @@ include 'userkey.php';
 
 $conn = connectDB();
 
-//print_r($_GET);
+print_r($_POST);
 
 //if no post or get; first time to page
 if (!isset($_POST['password']) && !isset($_POST['password_conf'])) {
@@ -18,17 +18,17 @@ if (!isset($_POST['password']) && !isset($_POST['password_conf'])) {
        "WHERE email ='".$mailID."'";
     echo "<html>\n";
     echo "<head>\n<link rel=\"stylesheet\" href=\"traininglog.css\">\n";
-    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
+    echo "<meta name=\"\" content=\"width=device-width, initial-scale=1.0\">";
     echo "</head>\n";
     echo "<body>\n";
     echo "Your Password has been updated<BR>";
     echo "<a href=\"login.php\">Go to login</a><BR>";
-  } else {
+  } /*else {
     header('Location: reset.php?mail='.$mailID.'&key='.$keyID.'&err=passMismatch');
-  }
-} else {
+  } */
+} /*else {
   header('Location: reset.php?mail='.$mailID.'&key='.$keyID.'&err=passNull');
-}
+}*/
 
 $conn->close();
 
