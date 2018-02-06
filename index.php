@@ -1,6 +1,12 @@
 <?php
 include 'connection.php';
 
+f (!isset($_COOKIE["uid"])) {
+  header("Location:login.php");
+}else {
+  $s_uid = $_COOKIE['uid'];
+}
+
 $conn = connectDB();
 
 if (isset($_POST["sport"])) {
@@ -21,7 +27,7 @@ if (isset($_POST["sport"])) {
   $ins_sql = "INSERT into trainingLog
       (trainDate, distance, elapsedTime, type, userID)
       VALUES
-      (now(), ".$dist.", '".$time."', '".$sport."', 7)";
+      (now(), ".$dist.", '".$time."', '".$sport."', $s_uid)";
 
   $ins_trainlog=$conn->query($ins_sql);
 
@@ -63,7 +69,7 @@ echo "<BR><BR>";
 echo "Annual Totals for ".date('M j').":<BR>\n";
 $tot_sql = "SELECT type, count(type) count_type, sum(distance) sum_dist, SEC_TO_TIME(SUM(TIME_TO_SEC(elapsedTime))) sum_time
   FROM trainingLog
-  WHERE userID = 7
+  WHERE userID = $s_uid
   GROUP BY type";
 
 if (!$tot_result = $conn->query($tot_sql)) {
