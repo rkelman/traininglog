@@ -14,7 +14,7 @@ if (isset($_POST["sport"])) {
   $time = $_POST["time"];
 
   //if distance is not set (like for circuit) set it to 0
-  if (isset($_POST["distance"])) {
+  if (!empty($_POST["distance"])) {
     $dist = $_POST["distance"];
   } else {
     $dist = "0";
