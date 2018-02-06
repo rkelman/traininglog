@@ -17,7 +17,7 @@ if (isset($_POST["sport"])) {
   if (!is_null($_POST["distance"])) {
     $dist = $_POST["distance"];
   } else {
-    $dist = 0;
+    $dist = "0";
   }
 
   if ($conn->connect_errno > 0) {
