@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-f (!isset($_COOKIE["uid"])) {
+if (!isset($_COOKIE["uid"])) {
   header("Location:login.php");
 }else {
   $s_uid = $_COOKIE['uid'];
