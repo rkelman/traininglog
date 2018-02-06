@@ -14,7 +14,7 @@ if (isset($_POST["sport"])) {
   $time = $_POST["time"];
 
   //if distance is not set (like for circuit) set it to 0
-  if (!is_null($_POST["distance"])) {
+  if (isset($_POST["distance"])) {
     $dist = $_POST["distance"];
   } else {
     $dist = "0";
@@ -38,7 +38,7 @@ echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 echo "</head>\n";
 echo "<body>\n";
 //troubleshooting insert statements
-echo $ins_sql;
+echo $ins_sql."; distance='".$_POST["distance"]."'";
 if ($ins_trainlog) {
   if ($sport == 'Cycling') {
     $activity = 'ride';
