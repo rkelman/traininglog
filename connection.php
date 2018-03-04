@@ -8,6 +8,10 @@ function connectDB() {
   $dbname = "daxhundc_misc";
 
   $dh_conn = new mysqli($servername, $user, $passwd, $dbname);
-  return $dh_conn;
-}
+
+  if ($dh_conn->connect_error) {
+   die("Connection failed: " . $conn->connect_error);
+  } else {
+    return $dh_conn;
+  }
 ?>
