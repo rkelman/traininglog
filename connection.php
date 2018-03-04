@@ -10,7 +10,7 @@ function connectDB() {
   $dh_conn = new mysqli($servername, $user, $passwd, $dbname);
 
   if ($dh_conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $dh_conn->connect_error);
   } else {
     return $dh_conn;
   }
