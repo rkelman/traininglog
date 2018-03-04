@@ -14,4 +14,5 @@ function connectDB() {
   } else {
     return $dh_conn;
   }
+}
 ?>
